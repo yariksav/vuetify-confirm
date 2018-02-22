@@ -1,6 +1,6 @@
 {
   "name": "vuetify-confirm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extends vuetify with confirm dialog",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yariksav/adonis-request-validation.git"
+    "url": "git+https://github.com/yariksav/vuetify-confirmss.git"
   },
   "author": "Savaryn Yaroslav",
   "license": "MIT",
