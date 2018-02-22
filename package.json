@@ -1,0 +1,21 @@
+{
+  "name": "vuetify-confirm",
+  "version": "0.0.1",
+  "description": "Extends vuetify with confirm dialog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yariksav/adonis-request-validation.git"
+  },
+  "author": "Savaryn Yaroslav",
+  "license": "MIT",
+  "dependencies": {},
+  "keywords": [
+    "vuetify",
+    "confirm",
+    "vuetify-confirm"
+  ]
+}
