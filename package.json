@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yariksav/vuetify-confirmss.git"
+    "url": "git+https://github.com/yariksav/vuetify-confirm.git"
   },
   "author": "Savaryn Yaroslav",
   "license": "MIT",
