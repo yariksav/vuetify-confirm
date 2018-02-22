@@ -1,6 +1,6 @@
-# Adonis Request Validation Provider
+# Vuetify.js confirm dialog
 
-This module extends vuetify confirm dialog. Calls only by simple command
+This module extends vuetify confirm dialog.
 
 ## Setup
 
