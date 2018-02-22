@@ -14,7 +14,7 @@ npm install vuetify-confirm
 import VuetifyConfirm from 'vuetify-confirm'
 Vue.use(VuetifyConfirm)
 ```
-Install with options:
+Install with options or any of them:
 
 ```javascript
 import VuetifyConfirm from 'vuetify-confirm'
@@ -23,11 +23,20 @@ Vue.use(VuetifyConfirm, {
   buttonFalseText: 'On, ho',
   color: 'warning',
   icon: 'warning',
+  title: 'Warning',
+  width: 300,
   property: '$confirm'
 })
 ```
 
+property: '$confirm' will create property with this name in Vue prototype
+
 ## Usage
+
+```js
+this.$confirm('Do yo really want to exit?').then(res => {
+})
+```
 
 ```js
 let res = await this.$confirm('Do yo really want to exit?', {title: 'Warning'})
@@ -35,3 +44,4 @@ if (res) {
   ...
 }
 ```
+*res* will be true or false
