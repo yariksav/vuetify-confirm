@@ -5,7 +5,7 @@
       <v-toolbar-title class="white--text" v-text="title"/>
     </v-toolbar>
     <v-card tile>
-      <v-card-text v-text="message"/>
+      <v-card-text v-html="message"/>
       <v-card-actions>
         <v-spacer/>
         <v-btn :color="buttonTrueColor" flat @click="choose(true)">{{ buttonTrueText }}</v-btn>
