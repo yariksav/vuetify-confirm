@@ -1,6 +1,6 @@
 {
   "name": "vuetify-confirm",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Extends vuetify with confirm dialog",
   "main": "index.js",
   "scripts": {
