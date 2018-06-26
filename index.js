@@ -2,7 +2,7 @@
 import Confirm from './Confirm'
 
 function Install (Vue, options) {
-  const property = options && options.property || '$confirm'
+  const property = (options && options.property) || '$confirm'
   function createDialogCmp (options) {
     return new Promise(resolve => {
       const cmp = new Vue(Object.assign(Confirm, {
