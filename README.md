@@ -4,6 +4,10 @@ This module extends vuetify confirm dialog.
 
 [![NPM Version][npm-image]][npm-url]
 
+## Demo page
+
+[See demo here](https://yariksav.github.io/demo-vuetify-confirm.html)
+
 ## Setup
 
 Install the package from npm
