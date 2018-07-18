@@ -2,6 +2,8 @@
 
 This module extends vuetify confirm dialog.
 
+[![NPM Version][npm-image]][npm-url]
+
 ## Setup
 
 Install the package from npm
@@ -52,3 +54,6 @@ You can format your message with arbitrary HTML - make sure you don't include an
 this.$confirm('Please do not do this.<br>Do you really want to exit?'}).then(res => {
 })
 ```
+
+[npm-image]: https://img.shields.io/npm/v/vuetify-confirm.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/vuetify-confirm
