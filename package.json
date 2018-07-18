@@ -2,10 +2,20 @@
   "name": "vuetify-confirm",
   "version": "0.0.5",
   "description": "Extends vuetify with confirm dialog",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:module && npm run build:browser",
+    "build:module": "bili --name vuetify-confirm --format cjs,es --plugin vue",
+    "build:browser": "bili --name vuetify-confirm --format umd,umd-min --module-name vuetifyConfirm --external vue --global.vue \"Vue\" --plugin vue",
+    "lint": "eslint --ext js --ext vue src",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublish": "npm run build"
   },
+  "main": "dist/vuetify-confirm.cjs.js",
+  "module": "dist/vuetify-confirm.m.js",
+  "browser": "dist/vuetify-confirm.js",
+  "cdn": "dist/vuetify-confirm.min.js",
+  "unpkg": "dist/vuetify-confirm.min.js",
+  "homepage": "https://github.com/yariksav/vuetify-confirm",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yariksav/vuetify-confirm.git"
@@ -17,5 +27,19 @@
     "vuetify",
     "confirm",
     "vuetify-confirm"
-  ]
+  ],
+  "devDependencies": {
+    "bili": "^1.5.8",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-vue": "^4.2.0",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue": "^2.5.13",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "peerDependencies": {
+    "vue": "*",
+    "vuetify": "*"
+  }
 }

@@ -1,5 +1,4 @@
-// import Vue from 'vue'
-import Confirm from './Confirm'
+import Confirm from './Confirm.vue'
 
 function Install (Vue, options) {
   const property = (options && options.property) || '$confirm'
