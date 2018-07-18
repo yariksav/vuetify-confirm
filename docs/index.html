@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vuetify Confirm Dialog Demo</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <style>
+    body { padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <h1>Vuetify Toast Demo</h1>
+        <v-btn @click="confirmWarning" color="primary">Show warning confirmation dialog</v-btn>
+        <v-btn @click="confirmSimple" color="primary">Show simple confirmation</v-btn>
+        <br>
+        <br>
+        <pre>
+          this.$confirm('Do you really want to exit?').then(res => {
+          })
+          let res = await this.$confirm('Do you really want to exit?', {title: 'Warning'})
+          if (res) {
+            ...
+          }
+        </pre>
+        <br>
+        <br>
+        Documentation: <a href="https://github.com/yariksav/vuetify-confirm">https://github.com/yariksav/vuetify-confirm</a>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+  <script src="https://unpkg.com/vuetify-confirm"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      methods: {
+        async confirmWarning (text) {
+          const res = await this.$confirm('Do you really want to exit?', {
+            title: 'Warning',
+            color: 'warning',
+            icon: 'warning',
+            title: 'Warning'
+          });
+          alert(res)
+        },
+        async confirmSimple (text) {
+          const res = await this.$confirm('Do you really </b> want to exit?');
+          alert(res)
+        },
+      }
+    });
+  </script>
+</body>
+</html>
