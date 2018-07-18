@@ -1,6 +1,6 @@
 {
   "name": "vuetify-confirm",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Extends vuetify with confirm dialog",
   "scripts": {
     "build": "npm run build:module && npm run build:browser",
