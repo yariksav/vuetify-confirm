@@ -1,5 +1,5 @@
 <template>
-  <v-dialog @input="change" value="true" :max-width="width">
+  <v-dialog @input="change" value="true" :max-width="width" @keydown.esc="choose(false)">
     <v-toolbar v-if="!!title" dark :color="color" dense>
       <v-icon v-if="!!icon">{{ icon }}</v-icon>
       <v-toolbar-title class="white--text" v-text="title"/>
