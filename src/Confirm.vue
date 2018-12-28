@@ -9,7 +9,7 @@
       <v-card-actions>
         <v-spacer/>
         <v-btn :color="buttonTrueColor" flat @click="choose(true)">{{ buttonTrueText }}</v-btn>
-        <v-btn :color="buttonFalseColor" flat @click="choose(false)">{{ buttonFalseText }}</v-btn>
+        <v-btn :color="buttonFalseColor" flat v-if="buttonFalseText !== false" @click="choose(false)">{{ buttonFalseText }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
