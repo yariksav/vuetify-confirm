@@ -5,3 +5,5 @@ test/coverage
 dist
 yarn-error.log
 reports
+package-lock.json
+*.tgz

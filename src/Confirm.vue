@@ -1,24 +1,35 @@
 <template>
   <v-dialog @input="change" value="true" :max-width="width" @keydown.esc="choose(false)">
-    <v-toolbar v-if="!!title" dark :color="color" dense>
-      <v-icon v-if="!!icon">{{ icon }}</v-icon>
+    <v-toolbar v-if="Boolean(title)" dark :color="color" dense>
+      <v-icon v-if="Boolean(icon)">{{ icon }}</v-icon>
       <v-toolbar-title class="white--text" v-text="title"/>
     </v-toolbar>
     <v-card tile>
       <v-card-text v-html="message"/>
       <v-card-actions>
         <v-spacer/>
-        <v-btn :color="buttonTrueColor" flat @click="choose(true)">{{ buttonTrueText }}</v-btn>
-        <v-btn :color="buttonFalseColor" flat v-if="buttonFalseText !== false" @click="choose(false)">{{ buttonFalseText }}</v-btn>
+        <v-btn v-if="Boolean(buttonTrueText)" :color="buttonTrueColor" flat @click="choose(true)">{{ buttonTrueText }}</v-btn>
+        <v-btn v-if="Boolean(buttonFalseText)" :color="buttonFalseColor" flat @click="choose(false)">{{ buttonFalseText }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
-import {VCard, VDialog} from 'vuetify/lib';
+import { VCard, VCardActions, VCardText, VDialog, VIcon, VToolbar, VToolbarTitle, VSpacer, VBtn } from 'vuetify/lib'
 
 export default {
+  components: {
+    VCard,
+    VCardActions,
+    VCardText,
+    VDialog,
+    VIcon,
+    VToolbar,
+    VToolbarTitle,
+    VSpacer,
+    VBtn
+  },
   props: {
     buttonTrueText: {
       type: String,
@@ -71,10 +82,6 @@ export default {
     change (res) {
       this.$destroy()
     }
-  },
-  components: {
-    VCard,
-    VDialog
   }
 }
 </script>
