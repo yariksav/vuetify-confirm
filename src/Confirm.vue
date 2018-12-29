@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import {VCard, VDialog} from 'vuetify/lib';
 
 export default {
   props: {
@@ -70,6 +71,10 @@ export default {
     change (res) {
       this.$destroy()
     }
+  },
+  components: {
+    VCard,
+    VDialog
   }
 }
 </script>
