@@ -25,12 +25,12 @@ Install with options or any of them:
 ```javascript
 import VuetifyConfirm from 'vuetify-confirm'
 Vue.use(VuetifyConfirm, {
-  buttonTrueText: 'OK',
-  buttonFalseText: 'On, ho',
+  buttonTrueText: 'Accept',
+  buttonFalseText: 'Discard',
   color: 'warning',
   icon: 'warning',
   title: 'Warning',
-  width: 300,
+  width: 350,
   property: '$confirm'
 })
 ```
