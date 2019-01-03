@@ -1,13 +1,27 @@
-import Vue from 'vue'
+import Vue, { PluginFunction } from 'vue'
 
-declare module 'vue/types/vue' {
-  interface Vue {
-    $confirm (message: string, options?: object): Promise<any>
-  }
+export interface VuetifyConfirmUseOptions extends VuetifyConfirmObject {
+  property?: string
 }
 
-declare module 'vue/types/options' {
-  interface ComponentOptions<V extends Vue> {
-    $confirm (message: string, options?: object): Promise<any>
+declare const VuetifyConfirmPlugin: VuetifyConfirmPlugin
+export default VuetifyConfirmPlugin
+
+export interface VuetifyConfirmPlugin {
+  install: PluginFunction<VuetifyConfirmUseOptions>
+}
+
+export interface VuetifyConfirmObject {
+  buttonTrueText?: string
+  buttonFalseText?: string
+  buttonTrueColor?: string
+  buttonFalseColor?: string
+  color?: string
+  icon?: string
+  width? : number
+}
+declare module 'vue/types/vue' {
+  interface Vue {
+    $confirm (message: string, options?: VuetifyConfirmObject): Promise<boolean | undefined>
   }
 }

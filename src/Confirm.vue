@@ -8,8 +8,8 @@
       <v-card-text v-html="message"/>
       <v-card-actions>
         <v-spacer/>
-        <v-btn v-if="Boolean(buttonTrueText)" :color="buttonTrueColor" flat @click="choose(true)">{{ buttonTrueText }}</v-btn>
         <v-btn v-if="Boolean(buttonFalseText)" :color="buttonFalseColor" flat @click="choose(false)">{{ buttonFalseText }}</v-btn>
+        <v-btn v-if="Boolean(buttonTrueText)" :color="buttonTrueColor" flat @click="choose(true)">{{ buttonTrueText }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -64,7 +64,7 @@ export default {
     },
     width: {
       type: Number,
-      default: 300
+      default: 350
     }
   },
   data () {
