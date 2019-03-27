@@ -37,6 +37,16 @@ Vue.use(VuetifyConfirm, {
 
 property: '$confirm' will create property with this name in Vue prototype
 
+## Params
+ - message: String, required
+ - options: Object
+    - buttonTrueText: String
+    - buttonFalseText: String
+    - color: String
+    - icon: String
+    - title: String
+    - width: Number
+    - persistent: Boolean
 ## Usage
 
 ```js
@@ -45,7 +55,7 @@ this.$confirm('Do you really want to exit?').then(res => {
 ```
 
 ```js
-let res = await this.$confirm('Do you really want to exit?', {title: 'Warning'})
+let res = await this.$confirm('Do you really want to exit?', { title: 'Warning' })
 if (res) {
   ...
 }
@@ -55,8 +65,8 @@ if (res) {
 You can format your message with arbitrary HTML - make sure you don't include any user-provided content here:
 
 ```js
-this.$confirm('Please do not do this.<br>Do you really want to exit?'}).then(res => {
-})
+const res = await this.$confirm('Please do not do this.<br>Do you really want to exit?')
+console.log(res)
 ```
 
 [npm-image]: https://img.shields.io/npm/v/vuetify-confirm.svg?style=flat-square

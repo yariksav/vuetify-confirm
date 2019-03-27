@@ -1,5 +1,5 @@
 <template>
-  <v-dialog @input="change" value="true" :max-width="width" @keydown.esc="choose(false)">
+  <v-dialog @input="change" value="true" :max-width="width" :persistent="persistent" @keydown.esc="choose(false)">
     <v-toolbar v-if="Boolean(title)" dark :color="color" dense>
       <v-icon v-if="Boolean(icon)">{{ icon }}</v-icon>
       <v-toolbar-title class="white--text" v-text="title"/>
@@ -59,6 +59,7 @@ export default {
       type: String,
       required: true
     },
+    persistent: Boolean,
     title: {
       type: String
     },
