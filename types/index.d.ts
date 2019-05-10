@@ -18,6 +18,7 @@ export interface VuetifyConfirmObject {
   buttonFalseColor?: string
   color?: string
   icon?: string
+  title?: string
   width? : number
 }
 declare module 'vue/types/vue' {
