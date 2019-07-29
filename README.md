@@ -16,15 +16,18 @@ Install the package from npm
 npm install vuetify-confirm
 ```
 
+> Important: since vuetify2 you should put instance of vuetify into config
+
 ```javascript
 import VuetifyConfirm from 'vuetify-confirm'
-Vue.use(VuetifyConfirm)
+Vue.use(VuetifyConfirm, { vuetify })
 ```
 Install with options or any of them:
 
 ```javascript
 import VuetifyConfirm from 'vuetify-confirm'
 Vue.use(VuetifyConfirm, {
+  vuetify,
   buttonTrueText: 'Accept',
   buttonFalseText: 'Discard',
   color: 'warning',

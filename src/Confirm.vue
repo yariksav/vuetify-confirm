@@ -1,5 +1,5 @@
 <template>
-  <v-dialog @input="change" value="true" :max-width="width" :persistent="persistent" @keydown.esc="choose(false)">
+  <v-dialog eager @input="change" value="true" :max-width="width" :persistent="persistent" @keydown.esc="choose(false)">
     <v-toolbar v-if="Boolean(title)" dark :color="color" dense>
       <v-icon v-if="Boolean(icon)">{{ icon }}</v-icon>
       <v-toolbar-title class="white--text" v-text="title"/>
@@ -8,8 +8,8 @@
       <v-card-text v-html="message"/>
       <v-card-actions>
         <v-spacer/>
-        <v-btn v-if="Boolean(buttonFalseText)" :color="buttonFalseColor" flat @click="choose(false)">{{ buttonFalseText }}</v-btn>
-        <v-btn v-if="Boolean(buttonTrueText)" :color="buttonTrueColor" flat @click="choose(true)">{{ buttonTrueText }}</v-btn>
+        <v-btn v-if="Boolean(buttonFalseText)" :color="buttonFalseColor" text @click="choose(false)">{{ buttonFalseText }}</v-btn>
+        <v-btn v-if="Boolean(buttonTrueText)" :color="buttonTrueColor" text @click="choose(true)">{{ buttonTrueText }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -65,7 +65,7 @@ export default {
     },
     width: {
       type: Number,
-      default: 350
+      default: 400
     }
   },
   data () {
