@@ -7,3 +7,5 @@ yarn-error.log
 reports
 package-lock.json
 *.tgz
+build/related
+
