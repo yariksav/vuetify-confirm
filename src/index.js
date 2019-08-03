@@ -10,15 +10,16 @@ function Install (Vue, options = {}) {
   }
   const Ctor = Vue.extend(Object.assign({ vuetify }, Confirm))
   function createDialogCmp (options) {
+    const container = document.querySelector('[data-app=true]') || document.body
     return new Promise(resolve => {
       const cmp = new Ctor(Object.assign({}, {
         propsData: Object.assign({}, Vue.prototype.$confirm.options, options),
         destroyed: () => {
-          document.body.removeChild(cmp.$el)
+          container.removeChild(cmp.$el)
           resolve(cmp.value)
         }
       }))
-      document.body.appendChild(cmp.$mount().$el)
+      container.appendChild(cmp.$mount().$el)
     })
   }
   

@@ -53,7 +53,9 @@ export default {
     },
     icon: {
       type: String,
-      default: 'warning'
+      default () {
+        return this.$vuetify.icons.values.warning
+      }
     },
     message: {
       type: String,
@@ -79,7 +81,6 @@ export default {
       this.value = value
       this.$destroy()
     },
-
     change (res) {
       this.$destroy()
     }
