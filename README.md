@@ -17,6 +17,7 @@ npm install vuetify-confirm
 ```
 
 > Important: since vuetify2 you should put instance of vuetify into config
+> For vuetify@2.x.x use version vuetify-confirm@2.0.0
 
 ```javascript
 import VuetifyConfirm from 'vuetify-confirm'
