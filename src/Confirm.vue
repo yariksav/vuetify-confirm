@@ -1,15 +1,29 @@
 <template>
   <v-dialog eager @input="change" value="true" :max-width="width" :persistent="persistent" @keydown.esc="choose(false)">
-    <v-toolbar v-if="Boolean(title)" dark :color="color" dense>
-      <v-icon v-if="Boolean(icon)">{{ icon }}</v-icon>
-      <v-toolbar-title class="white--text" v-text="title"/>
-    </v-toolbar>
     <v-card tile>
-      <v-card-text v-html="message"/>
+      <v-toolbar v-if="Boolean(title)" dark :color="color" dense flat>
+        <v-icon v-if="Boolean(icon)">{{ icon }}</v-icon>
+        <v-toolbar-title class="white--text" v-text="title"/>
+      </v-toolbar>
+      <v-card-text class="body-1 py-3" v-html="message"/>
       <v-card-actions>
         <v-spacer/>
-        <v-btn v-if="Boolean(buttonFalseText)" :color="buttonFalseColor" text @click="choose(false)">{{ buttonFalseText }}</v-btn>
-        <v-btn v-if="Boolean(buttonTrueText)" :color="buttonTrueColor" text @click="choose(true)">{{ buttonTrueText }}</v-btn>
+        <v-btn
+          v-if="Boolean(buttonFalseText)"
+          :color="buttonFalseColor"
+          text
+          @click="choose(false)"
+        >
+          {{ buttonFalseText }}
+        </v-btn>
+        <v-btn
+          v-if="Boolean(buttonTrueText)"
+          :color="buttonTrueColor"
+          text
+          @click="choose(true)"
+        >
+          {{ buttonTrueText }}
+        </v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -67,7 +81,7 @@ export default {
     },
     width: {
       type: Number,
-      default: 400
+      default: 450
     }
   },
   data () {
@@ -75,7 +89,19 @@ export default {
       value: false
     }
   },
+  mounted () {
+    document.addEventListener('keyup', this.onEnterPressed)
+  },
+  destroyed () {
+    document.removeEventListener('keyup', this.onEnterPressed)
+  },
   methods: {
+    onEnterPressed (e) {
+      if (e.keyCode === 13) {
+        e.stopPropagation()
+        this.choose(true)
+      }
+    },
     choose (value) {
       this.$emit('result', value)
       this.value = value
