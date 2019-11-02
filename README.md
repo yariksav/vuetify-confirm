@@ -5,8 +5,9 @@ This module extends vuetify confirm dialog.
 [![NPM Version][npm-image]][npm-url]
 
 ## Demo page
+[See the demo](https://q5w2v.csb.app/)
 
-[See demo here](https://yariksav.github.io/demo-vuetify-confirm.html)
+[Open the demo in Codesandbox](https://codesandbox.io/s/vuetify-2-confirm-example-q5w2v)
 
 ## Setup
 
@@ -16,15 +17,40 @@ Install the package from npm
 npm install vuetify-confirm
 ```
 
+
+
+## vuetify 2
+
+> Important: since vuetify2 you should put instance of vuetify into config
+
 ```javascript
+const vuetify = new Vuetify(...)
 import VuetifyConfirm from 'vuetify-confirm'
-Vue.use(VuetifyConfirm)
+Vue.use(VuetifyConfirm, { vuetify })
 ```
-Install with options or any of them:
+....
+
+### Installation in Nuxt
+In nuxt create and register plugin `plugins/dialog.js`
+
+```js
+import Vue from 'vue'
+import VuetifyConfirm from 'vuetify-confirm'
+
+export default ({ app }) => {
+  Vue.use(VuetifyConfirm, { vuetify: app.vuetify })
+}
+```
+
+## vuetify 1
+For vuetify 1 please use [0.2.6 version](https://www.npmjs.com/package/vuetify-confirm/v/0.2.6)
+
+## Installation options
 
 ```javascript
 import VuetifyConfirm from 'vuetify-confirm'
 Vue.use(VuetifyConfirm, {
+  vuetify,
   buttonTrueText: 'Accept',
   buttonFalseText: 'Discard',
   color: 'warning',
@@ -55,7 +81,7 @@ this.$confirm('Do you really want to exit?').then(res => {
 ```
 
 ```js
-let res = await this.$confirm('Do you really want to exit?', { title: 'Warning' })
+const res = await this.$confirm('Do you really want to exit?', { title: 'Warning' })
 if (res) {
   ...
 }
@@ -68,6 +94,8 @@ You can format your message with arbitrary HTML - make sure you don't include an
 const res = await this.$confirm('Please do not do this.<br>Do you really want to exit?')
 console.log(res)
 ```
+
+Also you can press Enter or Esc keys for choose confirm result
 
 [npm-image]: https://img.shields.io/npm/v/vuetify-confirm.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/vuetify-confirm
