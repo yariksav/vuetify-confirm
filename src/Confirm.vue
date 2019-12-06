@@ -2,7 +2,7 @@
   <v-dialog eager @input="change" value="true" :max-width="width" :persistent="persistent" @keydown.esc="choose(false)">
     <v-card tile>
       <v-toolbar v-if="Boolean(title)" dark :color="color" dense flat>
-        <v-icon v-if="Boolean(icon)">{{ icon }}</v-icon>
+        <v-icon v-if="Boolean(icon)" left>{{ icon }}</v-icon>
         <v-toolbar-title class="white--text" v-text="title"/>
       </v-toolbar>
       <v-card-text class="body-1 py-3" v-html="message"/>
