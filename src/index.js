@@ -13,7 +13,7 @@ function Install (Vue, options = {}) {
     const container = document.querySelector('[data-app=true]') || document.body
     return new Promise(resolve => {
       const cmp = new Ctor(Object.assign({}, {
-        propsData: Object.assign({}, Vue.prototype.$confirm.options, options),
+        propsData: Object.assign({}, Vue.prototype[property].options, options),
         destroyed: () => {
           container.removeChild(cmp.$el)
           resolve(cmp.value)
