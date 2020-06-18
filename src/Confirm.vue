@@ -5,7 +5,7 @@
         <v-icon v-if="Boolean(icon)" left>{{ icon }}</v-icon>
         <v-toolbar-title class="white--text" v-text="title"/>
       </v-toolbar>
-      <v-card-text class="body-1 py-3" v-html="message"/>
+      <v-card-text class="body-1 text-body-1 py-3" v-html="message"/>
       <v-card-actions>
         <v-spacer/>
         <v-btn
