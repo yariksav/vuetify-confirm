@@ -11,7 +11,7 @@
         <v-btn
           v-if="Boolean(buttonFalseText)"
           :color="buttonFalseColor"
-          text
+          :text="buttonFalseFlat"
           @click="choose(false)"
         >
           {{ buttonFalseText }}
@@ -19,7 +19,7 @@
         <v-btn
           v-if="Boolean(buttonTrueText)"
           :color="buttonTrueColor"
-          text
+          :text="buttonTrueFlat"
           @click="choose(true)"
         >
           {{ buttonTrueText }}
@@ -60,6 +60,14 @@ export default {
     buttonFalseColor: {
       type: String,
       default: 'grey'
+    },
+    buttonFalseFlat: {
+      type: Boolean,
+      default: true
+    },
+    buttonTrueFlat: {
+      type: Boolean,
+      default: true
     },
     color: {
       type: String,
