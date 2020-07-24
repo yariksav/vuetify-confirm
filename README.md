@@ -53,6 +53,10 @@ Vue.use(VuetifyConfirm, {
   vuetify,
   buttonTrueText: 'Accept',
   buttonFalseText: 'Discard',
+  buttonTrueColor: 'primary',
+  buttonFalseColor: 'grey',
+  buttonTrueFlat: false,
+  buttonFalseFlat: true,
   color: 'warning',
   icon: 'warning',
   title: 'Warning',
@@ -66,8 +70,12 @@ property: '$confirm' will create property with this name in Vue prototype
 ## Params
  - message: String, required
  - options: Object
-    - buttonTrueText: String
-    - buttonFalseText: String
+    - buttonTrueText: String, default: 'Yes'
+    - buttonFalseText: String, default: 'No'
+    - buttonTrueColor: String, default: 'primary'
+    - buttonFalseColor: String, default: 'grey'
+    - buttonTrueFlat: Boolean, default: true
+    - buttonFalseFlat: Boolean, default: true
     - color: String
     - icon: String
     - title: String
